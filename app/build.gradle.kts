@@ -72,6 +72,7 @@ dependencies {
     //retrofit dependencys
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     //dagger-hilt dependency
     implementation("com.google.dagger:hilt-android:2.48")
