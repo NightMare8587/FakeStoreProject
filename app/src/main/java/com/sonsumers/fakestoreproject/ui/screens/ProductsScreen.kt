@@ -23,6 +23,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.sonsumers.fakestoreproject.R
 import com.sonsumers.fakestoreproject.model.StoreModelsItem
 
@@ -38,11 +39,17 @@ fun ProductsScreen(
             horizontalArrangement = Arrangement.Center
         ) {
 
-            Image(
-                painter = painterResource(id = R.drawable.sample_jp),
+            AsyncImage(
+                model = storeModelsItem.image,
                 contentDescription = "Sample",
+                placeholder = painterResource(id = R.drawable.sample_jp),
                 modifier = Modifier.size(250.dp)
             )
+//            Image(
+//                painter = painterResource(id = R.drawable.sample_jp),
+//                contentDescription = "Sample",
+//                modifier = Modifier.size(250.dp)
+//            )
         }
 
         Spacer(modifier = Modifier.height(10.dp))
