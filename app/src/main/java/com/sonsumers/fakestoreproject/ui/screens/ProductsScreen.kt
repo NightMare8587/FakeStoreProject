@@ -24,10 +24,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.sonsumers.fakestoreproject.R
+import com.sonsumers.fakestoreproject.model.StoreModelsItem
 
-@Preview
 @Composable
 fun ProductsScreen(
+    storeModelsItem: StoreModelsItem,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier.padding(16.dp)) {
@@ -46,16 +47,16 @@ fun ProductsScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
         Column(modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Product Name", style = TextStyle(fontSize = 18.sp))
-            Text(text = "Product Description")
-            Text(text = "Category")
+            Text(text = storeModelsItem.title, style = TextStyle(fontSize = 18.sp))
+            Text(text = storeModelsItem.description)
+            Text(text = storeModelsItem.category)
         }
 
         Spacer(modifier = Modifier.height(10.dp))
 
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
             Text(
-                text = "Pricing",
+                text = storeModelsItem.price.toString(),
                 modifier = Modifier
                     .weight(1f)
                     .padding(0.dp, 8.dp),

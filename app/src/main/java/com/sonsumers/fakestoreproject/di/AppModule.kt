@@ -1,5 +1,6 @@
 package com.sonsumers.fakestoreproject.di
 
+import com.sonsumers.fakestoreproject.constants.Constants
 import com.sonsumers.fakestoreproject.network.ApiCalls
 import dagger.Module
 import dagger.Provides
@@ -26,6 +27,7 @@ object AppModule {
             .build()
         val retrofit = Retrofit.Builder()
             .client(client)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
